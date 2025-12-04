@@ -1,11 +1,14 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ["main, fix-workflow"]
   pull_request:
     branches: ["main"]
 
 jobs:
   hello:
-    echo "hello world"
+    runs-on: ubuntu-latest
+    steps:
+      echo "hello world"
